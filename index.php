@@ -21,6 +21,37 @@ $f3->route('GET /', function() {
     echo $view->render('views/home.html');
 });
 
+//Define a survey route
+$f3->route('GET /survey', function() {
+
+    //var_dump($_SESSION);
+
+    $view = new Template();
+    echo $view->render('views/survey.html');
+});
+
+//Define the summary page route
+$f3->route('POST /summary', function() {
+
+    //var_dump($_SESSION);
+
+    if(isset($_POST['fName'])){
+        $_SESSION['fName'] = $_POST['fName'];
+    }
+
+    if (isset($_POST['interests'])) {
+        $interest = $_POST['interests'];
+        $_SESSION['interests'] = implode(", ", $interest);
+
+    }
+
+    $view = new Template();
+    echo $view->render('views/summary.html');
+
+    //Clear the SESSION array
+    session_destroy();
+});
+
 
 //Run fat free
 $f3->run();
