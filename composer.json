@@ -1,0 +1,16 @@
+{
+  "name": "SDEV328/Projects/midterm",
+  "authors": [
+    {
+      "name": "Husrav Khomidov",
+      "email": "kkhomidov2@mail.greenriver.edu"
+    },
+    {
+      "name": "Jooo",
+      "email": "Joooo@greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
